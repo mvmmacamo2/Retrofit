@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.text_resultado);
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://localhost:8000/api/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://10.0.2.2:8000/api/")
                                                   .addConverterFactory(GsonConverterFactory.create())
                                                   .build();
         Api api = retrofit.create(Api.class);
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 for (Evento evento: eventos) {
                     String data = "";
                     data += "Id: " + evento.getId() + "\n";
-                    data += "Nome: " + evento.getNome() + "\n";
-                    data += "Descrição: " + evento.getDescricao() + "\n\n";
+//                    data += "Nome: " + evento.getNome() + "\n";
+//                    data += "Descrição: " + evento.getDescricao() + "\n\n";
                     textView.append(data);
                 }
             }
